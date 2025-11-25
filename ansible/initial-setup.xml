@@ -54,3 +54,9 @@
         group: root
         mode: 0644
 
+     - name: Disable web console
+       systemd:
+         name: cockpit
+         state: stopped
+         enabled: no
+
