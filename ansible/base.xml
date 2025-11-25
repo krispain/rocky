@@ -7,6 +7,5 @@
         name: |
           htop,
           ncdu,
-          et,
           docker,
           nmap

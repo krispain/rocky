@@ -4,8 +4,12 @@ Enable EPEL
 
 dnf -y install epel-release
 
+# enable CRB repo
+/usr/bin/crb enable
+
 Install Ansible core and git
 
+# get my configs
 dnf -y install ansible-core git
 
 git clone https://github.com/krispain/rocky.git
@@ -13,13 +17,13 @@ git clone https://github.com/krispain/rocky.git
 cd rocky/ansible
 
 # setup repos etc, one time stuff:
-ansbile-playbook initial-setup.xml
+ansible-playbook initial-setup.xml
 
 # Updates
-ansbile-playbook updates.xml
+ansible-playbook updates.xml
 
 # install packages etc, will be run over and over
-ansbile-playbook base.xml
+ansible-playbook base.xml
 
 reboot
 
