@@ -58,4 +58,5 @@
       dnf:
         name: cockpit-system
         state: absent
+        autoremove: yes
 
