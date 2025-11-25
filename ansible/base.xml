@@ -10,4 +10,5 @@
           docker-ce-cli,
           docker-compose-plugin,
           nmap,
+          net-tools,
           fail2ban
