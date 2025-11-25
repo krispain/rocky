@@ -17,10 +17,10 @@
         disable_gpg_check: true
         state: present
 
-    - name: Install docker repository
-      dnf:
-        name: "https://download.docker.com/linux/rhel/docker-ce.repo"
-        state: present
+    - name: Install docker repository file
+      get_url:
+        url: "https://download.docker.com/linux/rhel/docker-ce.repo"
+        dest: /etc/yum.repos.d/docker-ce.repo
 
     - name: add prompt script
       copy:
