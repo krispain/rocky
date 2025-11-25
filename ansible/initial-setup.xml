@@ -2,7 +2,7 @@
 - hosts: localhost
 
   tasks:
-    - name: Get Fedora Version
+    - name: Get Rocky Version
       command: "rpm -E %rocky"
       register: rocky_version
 
