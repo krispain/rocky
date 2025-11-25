@@ -9,4 +9,5 @@
           ncdu,
           docker-ce-cli,
           docker-compose-plugin,
-          nmap
+          nmap,
+          fail2ban
