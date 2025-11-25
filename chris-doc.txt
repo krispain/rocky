@@ -1,0 +1,36 @@
+#Base Server install
+
+Enable EPEL
+
+dnf -y install epel-release
+
+Install Ansible core and git
+
+dnf -y install ansible-core git
+
+git clone https://github.com/krispain/rocky.git
+
+cd rocky/ansible
+
+# setup repos etc, one time stuff:
+ansbile-playbook initial-setup.xml
+
+# Updates
+ansbile-playbook updates.xml
+
+# install packages etc, will be run over and over
+ansbile-playbook base.xml
+
+reboot
+
+ssh-keygen -t ed25519
+
+ssh-copy-id 172.16.1.71 # pi4 in house
+# as root on pi4 do:
+tail -n 1 /home/cpayne/.ssh/authorized_keys >> /root/.ssh/authorized_keys
+ssh-copy-id housing.krispain.com # Zurich
+# as root on housing do:
+tail -n 1 /home/cpayne/.ssh/authorized_keys >> /root/.ssh/authorized_keys
+
+Add ssh key to github account via web interface
+

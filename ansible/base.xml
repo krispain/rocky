@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: Install some packages
+      dnf:
+        name: |
+          htop,
+          ncdu,
+          et,
+          docker,
+          nmap

@@ -1,0 +1,5 @@
+alias -- gs='git status'
+alias -- l='ls -alh'
+alias -- ll='ls -l'
+alias -- ls='ls --color=tty'
+alias -- myip='dig +short myip.opendns.com @resolver1.opendns.com'

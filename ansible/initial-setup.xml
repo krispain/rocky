@@ -1,0 +1,50 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: Get Fedora Version
+      command: "rpm -E %rocky"
+      register: rocky_version
+
+    - name: Update all packages
+      dnf:
+        name: "*"
+        state: latest
+
+    - name: Install cloudflared
+      dnf:
+        name: "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-x86_64.rpm"
+        disable_gpg_check: true
+        state: present
+
+    - name: add prompt script
+      copy:
+        src: prompt.sh
+        dest: /etc/profile.d/prompt.sh
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: add aliases script
+      copy:
+        src: aliases.sh
+        dest: /etc/profile.d/aliases.sh
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: add environment script
+      copy:
+        src: environment.sh
+        dest: /etc/profile.d/environment.sh
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Install /etc/hosts file
+      copy:
+        src: hosts
+        dest: /etc/hosts
+        owner: root
+        group: root
+        mode: 0644
