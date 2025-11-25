@@ -17,6 +17,11 @@
         disable_gpg_check: true
         state: present
 
+    - name: Install docker repository
+      dnf:
+        name: "https://download.docker.com/linux/rhel/docker-ce.repo"
+        state: present
+
     - name: add prompt script
       copy:
         src: prompt.sh
@@ -48,3 +53,4 @@
         owner: root
         group: root
         mode: 0644
+
