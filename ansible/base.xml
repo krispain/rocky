@@ -8,4 +8,5 @@
           htop,
           ncdu,
           docker-ce-cli,
+          docker-compose-plugin,
           nmap
