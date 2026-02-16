@@ -11,6 +11,7 @@
           docker-ce,
           docker-ce-cli,
           docker-compose-plugin,
+          bash-completion,
           nmap,
           net-tools,
           fail2ban
